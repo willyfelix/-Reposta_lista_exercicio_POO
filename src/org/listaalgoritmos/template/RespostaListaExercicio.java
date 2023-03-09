@@ -21,7 +21,7 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularImc(float peso, float altura) 
 	{
-		return 0f;
+		return peso / (altura*altura);
 	}
 	
 	/**
@@ -34,7 +34,7 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularAreaTrapezio(float baseMaior, float baseMenor, float altura) 
 	{	
-		return 0f;
+		return ((baseMaior + baseMenor) * altura)/2;
 	}
 	
 	/**
@@ -47,7 +47,11 @@ public class RespostaListaExercicio {
 	 */
 	public static int maiorEntreDoisInteiros(int a, int b) 
 	{
-		return 0;
+		if (a < b) {
+			return b;
+		} else {
+			return a;
+		}
 	}
 	
 	/**
@@ -59,7 +63,11 @@ public class RespostaListaExercicio {
 	 */
 	public static boolean verificarParImpar(int numero) 
 	{
-		return false;		
+		if (numero % 2 == 0) {
+			return true;
+		} else {
+			return false;		
+		}
 	}
 	
 	/**
@@ -69,7 +77,15 @@ public class RespostaListaExercicio {
 	 * @return media
 	 */
 	public static float calcularMediaNotas(float[] notas) {
-		return 0f;
+		
+		float numeros = notas.length,  soma = 0, resultado;
+		
+		for(int i = 0; i < numeros; i++) {
+			soma = soma + notas[i];
+		}
+		resultado = soma / numeros;
+		
+		return resultado;
 	}
 	
 	/**
@@ -80,7 +96,14 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirArrayInverso(int[] array)
 	{
-		System.out.print("");
+		for (int i = array.length - 1; i >= 0 ; i--) {
+			System.out.print(array[i]);
+			if(i > 0) {
+				System.out.print(array[i] + ',');
+			} else {
+				System.out.print(array[i]);
+			}
+	    }
 	}
 	
 	/**
@@ -91,9 +114,22 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosPrimos(int[] array) 
 	{
-		System.out.print("");
+		for (int i = 0; i < array.length; i++) {
+			int divisores = 0;
+			
+			for (int j= 1; j <= array[i]; j++) {
+				
+			
+				if (array[i] % j ==0) {
+					divisores++;	
+				}
+			}
+			if (divisores == 2) {
+				System.out.print(array[i] + " ");
+			}
+			
+		}
 	}
-	
 	
 	/**
 	 * Método deve imprimir os elementos ímpares de um array de inteiros. O formato da impressão 
@@ -103,7 +139,15 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosImpares(int[] array) 
 	{
-		System.out.print("");
+		int numeros = array.length;
+		
+		for (int i = 0; i < numeros; i++ ) {
+			int numero = array[i];
+
+			if (numero % 2 != 0) {
+				System.out.print(numero + " ");
+		    }
+		}
 	}
 	
 	
@@ -114,8 +158,16 @@ public class RespostaListaExercicio {
 	 * @param array
 	 */
 	public static void imprimirElementosPares(int[] array) 
-	{
-		System.out.print("");
+	{	
+		int numeros = array.length;
+		
+		for (int i = 0; i >= numeros; i++ ) {
+			int numero = array[i];
+			
+			if (numero % 2 == 0) {
+				System.out.print(numero + " ");
+			}
+		}
 	}
 	
 	
@@ -126,8 +178,21 @@ public class RespostaListaExercicio {
 	 * @param array
 	 */
 	public static void imprimirMaiorMenorElemento(int[] array) 
-	{
-		System.out.print("");
+	{	
+		int valor = 1;
+		int valorMaior = array[0];
+		int valorMenor = array[0];
+		
+		for(int i = 1; i < array.length ; i++) {
+			if(valor > valorMaior && valor!=0) {
+                valorMaior = valor;
+            }
+            if(valor < valorMenor && valor!=0) {
+                valorMenor = valor;
+            }  
+		}
+		
+		System.out.print(valorMaior + ", " + valorMenor + " ");
 	}
 	
 	/**
@@ -138,7 +203,16 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularMediaAritmetica(int[] array) 
 	{
-		return 0f;
+		int i, numeros = array.length, soma = 0, resultado;
+		for(i = 0; i < numeros; i++) {
+			soma = soma + array[i];
+		}
+		resultado = soma / numeros;
+		
+		return resultado;
+
+		
 	}
+	
 	
 }
