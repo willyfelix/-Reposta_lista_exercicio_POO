@@ -8,7 +8,7 @@ public class RespostaListaExercicio {
 	 * Utilize apenas o método main para testar a implementação dos métodos. 
 	 * Não se faz necessário implementar dentro do escopo do método.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
 		
 	}
 	
@@ -96,15 +96,14 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirArrayInverso(int[] array)
 	{
-		for (int i = array.length - 1; i >= 0 ; i--) {
+		for (int i = array.length - 1; i >= 0; i--) {
 			System.out.print(array[i]);
-			if(i > 0) {
-				System.out.print(array[i] + ',');
-			} else {
-				System.out.print(array[i]);
-			}
-	    }
-	}
+
+	         if (i > 0) {
+	        	 System.out.print(',');
+	         }
+	     }
+	 }
 	
 	/**
 	 * Método deve imprimir os elementos primos de um array de inteiros. O formato da impressão 
@@ -116,18 +115,16 @@ public class RespostaListaExercicio {
 	{
 		for (int i = 0; i < array.length; i++) {
 			int divisores = 0;
-			
-			for (int j= 1; j <= array[i]; j++) {
-				
-			
-				if (array[i] % j ==0) {
-					divisores++;	
+
+			for (int j = 1; j <= array[i]; j++) {
+				if (array[i] % j == 0) {
+					divisores++;
 				}
 			}
+
 			if (divisores == 2) {
 				System.out.print(array[i] + " ");
 			}
-			
 		}
 	}
 	
@@ -161,8 +158,9 @@ public class RespostaListaExercicio {
 	{	
 		int numeros = array.length;
 		
-		for (int i = 0; i >= numeros; i++ ) {
-			int numero = array[i];
+		for (int i = 0; i < numeros; i++) {
+				int numero = array[i];
+		
 			
 			if (numero % 2 == 0) {
 				System.out.print(numero + " ");
@@ -179,21 +177,22 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirMaiorMenorElemento(int[] array) 
 	{	
-		int valor = 1;
-		int valorMaior = array[0];
-		int valorMenor = array[0];
-		
-		for(int i = 1; i < array.length ; i++) {
-			if(valor > valorMaior && valor!=0) {
+	    int valorMaior = array[0];
+        int valorMenor = array[0];
+        
+        for (int i = 1; i < array.length; i++) {
+            int valor = array[i];
+
+            if (valor > valorMaior) {
                 valorMaior = valor;
             }
-            if(valor < valorMenor && valor!=0) {
+            if (valor < valorMenor) {
                 valorMenor = valor;
-            }  
-		}
-		
-		System.out.print(valorMaior + ", " + valorMenor + " ");
-	}
+            }
+        }
+
+        System.out.print(valorMaior + " " + valorMenor + " ");
+    }
 	
 	/**
 	 * O método calcula a média aritmética dos elementos de um array de inteiros. 
